@@ -21,18 +21,12 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
-      )})`,
-      title: 'Browse Docs',
+      content: `[Vivado Design Suite に関するマニュアルのまとめはこちら](https://japan.xilinx.com/support/documentation-navigation/design-hubs.html)`,
+      title: 'Vivado マニュアル (日本語)',
     },
     {
-      content: 'Ask questions about the documentation and project',
-      title: 'Join the community',
-    },
-    {
-      content: "Find out what's new with this project",
-      title: 'Stay up to date',
+      content: '[Basys3 のリファレンスはこちら](https://reference.digilentinc.com/reference/programmable-logic/basys-3/reference-manual)',
+      title: 'Basys3 リファレンス (英語)',
     },
   ];
 
@@ -41,10 +35,10 @@ function Help(props) {
       <Container className="mainContainer documentContainer postContainer">
         <div className="post">
           <header className="postHeader">
-            <h1>Need help?</h1>
+            <h1>ヘルプページ</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
-          <GridBlock contents={supportLinks} layout="threeColumn" />
+          <p>公式マニュアルなどのリンクを紹介します。</p>
+          <GridBlock contents={supportLinks} layout="twoColumn" />
         </div>
       </Container>
     </div>

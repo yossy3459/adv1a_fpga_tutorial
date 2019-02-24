@@ -112,22 +112,19 @@ class Index extends React.Component {
       <BlockCenter layout="threeColumn">
         {[
           {
-            content: 'まずはここから',
-            image: `${baseUrl}img/docusaurus.svg`,
+            image: `${baseUrl}img/basic.svg`,
             imageAlign: 'top',
-            imageLink: 'docs/doc1.md'
+            imageLink: 'docs/intro-01'
           },
           {
-            content: 'より効率よく作業したいとき',
-            image: `${baseUrl}img/docusaurus.svg`,
+            image: `${baseUrl}img/advanced.svg`,
             imageAlign: 'top',
-            imageLink: 'docs/doc1.md'
+            imageLink: 'docs/adv-01'
           },
           {
-            content: 'マニュアルなど',
-            image: `${baseUrl}img/docusaurus.svg`,
+            image: `${baseUrl}img/help.svg`,
             imageAlign: 'top',
-            imageLink: 'docs/doc1.md'
+            imageLink: 'help'
           },
         ]}
       </BlockCenter>

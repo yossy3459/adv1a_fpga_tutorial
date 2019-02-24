@@ -38,8 +38,8 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Basic'},
-    {doc: 'doc2', label: 'Advanced'},
+    {doc: 'intro-01', label: 'Basic'},
+    {doc: 'adv-01', label: 'Advanced'},
     {page: 'help', label: 'Help'},
     {href: "http://syllabus.sic.shibaura-it.ac.jp/syllabus/2018/ko1/105270.html?y=2018&g=L01", label: "Syllabus" },
   ],
@@ -54,8 +54,9 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#3F51B5',
-    secondaryColor: '#7986CB',
+    primaryColor: '#070d59',
+    secondaryColor: '#1f3c88',
+    // third: 5893D4, fourth: CEDDEF, accent(pink): FF5E8B, accent(green): 5EFF8B
   },
 
   /* Custom fonts for website */
@@ -101,6 +102,7 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
+  docsSideNavCollapsible: true,
 };
 
 module.exports = siteConfig;

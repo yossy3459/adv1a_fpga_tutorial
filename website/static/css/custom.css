@@ -15,5 +15,82 @@
 @media only screen and (min-width: 1500px) {
 }
 
+.imageAlignTop .blockImage {
+    max-width: 160px;
+}
+
 .container .wrapper .imageAlignSide h2 {text-align: center}
 p.index_intro {margin: 0px 50px;}
+
+article img {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+article table img {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+article td {
+    vertical-align: middle;
+}
+
+.mainContainer .wrapper .post .postHeaderTitle {
+    padding: 0.5em;/*文字周りの余白*/
+    background: #E8EAF6; /*背景色*/
+    border-left: solid 5px #070d59; /*左線（実線 太さ 色)*/
+    font-weight: bold;
+}
+
+article h2 {
+    padding-bottom: .5em;
+    border-bottom: 4px solid #070d59;
+    font-weight: bold;
+}
+
+article h3 { 
+    position: relative; 
+    overflow: hidden; 
+    padding-bottom: .5em; 
+    font-weight: bold;
+    /* margin-top: 50px; */
+}
+article h3:before,h3:after { 
+    content: ""; 
+    position: absolute; 
+    bottom: 0;
+}
+article h3:before { 
+    border-bottom: 
+    2px solid #070d59; 
+    width: 100%;
+}
+article h3:after { 
+    border-bottom: 2px solid #E8EAF6; 
+    width: 100%;
+}
+
+article table{
+    border-collapse:collapse;
+    margin:0 auto;
+    border-style: hidden;
+}
+article td,th{
+    padding:10px;
+    border-style: hidden;
+}
+article th{
+    color:#fff;
+    background:#070d59;
+}
+article table tr:nth-child(odd){
+    background:#E8EAF6;
+}
+
+code {
+    color: #1A237E;
+    background: #E8EAF6;
+}

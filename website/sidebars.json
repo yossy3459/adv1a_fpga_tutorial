@@ -1,10 +1,14 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "はじめに": ["intro-01", "intro-02"],
+    "プロジェクト管理": ["project-01", "project-02"],
+    "RTL設計": ["rtl-01", "rtl-02"],
+    "シミュレーション": ["sim-01", "sim-02","sim-03"],
+    "論理合成・レイアウト": ["impl-01", "impl-02", "impl-03", "impl-04"],
+    "コンフィグレーション": ["conf-01", "conf-02"]
   },
   "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "エディタの変更方法": ["adv-01"],
+    "制約ファイル": ["adv-02", "adv-03", "adv-04"]
   }
 }
