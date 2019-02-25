@@ -23,8 +23,8 @@ const users = [
 const siteConfig = {
   title: '高度情報演習2A FPGA開発チュートリアル', // Title for your website.
   tagline: '担当: 宇佐美 公良',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://yossy3459.github.io', // Your website URL
+  baseUrl: '/koudo2a_fpga_tutorial_wip/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
