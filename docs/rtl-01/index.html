@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>ソースファイルの作成 · 高度情報演習2A FPGA開発チュートリアル</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;プロジェクトにrtl用ソースファイルを追加&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#プロジェクトにrtl用ソースファイルを追加&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;プロジェクトにRTL用ソースファイルを追加&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="ソースファイルの作成 · 高度情報演習2A FPGA開発チュートリアル"/><meta property="og:type" content="website"/><meta property="og:url" content="https://yossy3459.github.io/koudo2a_fpga_tutorial_wip/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;プロジェクトにrtl用ソースファイルを追加&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#プロジェクトにrtl用ソースファイルを追加&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;プロジェクトにRTL用ソースファイルを追加&lt;/h2&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/koudo2a_fpga_tutorial_wip/img/usamilab.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/koudo2a_fpga_tutorial_wip/css/main.css"/><script src="/koudo2a_fpga_tutorial_wip/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/koudo2a_fpga_tutorial_wip/"><img class="logo" src="/koudo2a_fpga_tutorial_wip/img/usamilab.png" alt="高度情報演習2A FPGA開発チュートリアル"/><h2 class="headerTitleWithLogo">高度情報演習2A FPGA開発チュートリアル</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/koudo2a_fpga_tutorial_wip/docs/intro-01" target="_self">Basic</a></li><li class=""><a href="/koudo2a_fpga_tutorial_wip/docs/adv-01" target="_self">Advanced</a></li><li class=""><a href="/koudo2a_fpga_tutorial_wip/help" target="_self">Help</a></li><li class=""><a href="http://syllabus.sic.shibaura-it.ac.jp/syllabus/2018/ko1/105270.html?y=2018&amp;g=L01" target="_self">Syllabus</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>RTL設計</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">はじめに<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/intro-01">FPGAでのLSI設計</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/intro-02">Vivadoの開き方</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">プロジェクト管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/project-01">プロジェクトの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/project-02">プロジェクトを開く</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">RTL設計<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/rtl-01">ソースファイルの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/rtl-02">回路構造の確認</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">シミュレーション<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-01">テストフィクスチャの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-02">シミュレーションの実行</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-03">波形操作</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">論理合成・レイアウト<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-01">論理合成・レイアウトの実行</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-02">クロックの設定</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-03">ピンアサイン</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-04">設定の保存と再レイアウト</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">コンフィグレーション<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/conf-01">Basys3の接続と操作</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/conf-02">FPGAへデータ転送</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">ソースファイルの作成</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="プロジェクトにrtl用ソースファイルを追加"></a><a href="#プロジェクトにrtl用ソースファイルを追加" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プロジェクトにRTL用ソースファイルを追加</h2>
+<p>例として、<code>adder</code> というVerilogファイルを作成する</p>
+<h3><a class="anchor" aria-hidden="true" id="1-ソースを追加"></a><a href="#1-ソースを追加" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. ソースを追加</h3>
+<p><code>Flow Navigator</code> =&gt; <code>PROJECT MANAGER</code> =&gt; <code>Add Source</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-1_rtl_start.png" alt="rtl_start"></p>
+<h3><a class="anchor" aria-hidden="true" id="2-追加するソースファイルの種類の選択"></a><a href="#2-追加するソースファイルの種類の選択" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 追加するソースファイルの種類の選択</h3>
+<p>RTL設計の場合、<code>Add or create design sources</code> を選択し、<code>Next</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-2_add_sources.png" alt="add_sources_0"></p>
+<h3><a class="anchor" aria-hidden="true" id="3-ソースファイルの作成"></a><a href="#3-ソースファイルの作成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. ソースファイルの作成</h3>
+<p><code>Create File</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-3_add_sources.png" alt="add_sources_1"></p>
+<h3><a class="anchor" aria-hidden="true" id="4-ファイル名の入力"></a><a href="#4-ファイル名の入力" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. ファイル名の入力</h3>
+<ul>
+<li><code>File type</code> は <code>Verilog</code> を指定</li>
+<li><code>File name</code> にソースファイル名を入力 (日本語不可)、ここでは <code>adder</code></li>
+<li><code>File location</code> は <code>&lt;Local to Project&gt;</code> を指定</li>
+</ul>
+<p>以上の設定を済ませたら、<code>OK</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-4_add_sources.png" alt="add_sources_2"></p>
+<h3><a class="anchor" aria-hidden="true" id="5-ソースファイルの確認"></a><a href="#5-ソースファイルの確認" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. ソースファイルの確認</h3>
+<p>4で入力したファイル名のVerilogファイルが作成されていることを確認<br>
+必要に応じて、3 ~ 4 の操作を繰り返し、必要な数だけソースファイルを作成する<br>
+確認ができたら、<code>Finish</code> をクリック</p>
+<p><img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-5_add_sources.png" alt="add_sources_3"></p>
+<h3><a class="anchor" aria-hidden="true" id="6-モジュール設定"></a><a href="#6-モジュール設定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. モジュール設定</h3>
+<p>モジュールの設定画面が出るが、ここではスキップする<br>
+何もせずに <code>OK</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-6_define_module.png" alt="define_module_1"></p>
+<p>確認が入るので、<code>Yes</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-7_define_module.png" alt="define_module_2"></p>
+<h3><a class="anchor" aria-hidden="true" id="7-完了"></a><a href="#7-完了" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. 完了</h3>
+<p><code>Project Manager</code> の <code>Sources</code> ペイン内の <code>Design Souces</code> ディレクトリ内に、<br>
+先ほど指定した名前のVerilogファイル <code>adder</code> が作成されていればOK<br>
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-8_main.png" alt="main_1"></p>
+<h2><a class="anchor" aria-hidden="true" id="rtl記述のコーディング"></a><a href="#rtl記述のコーディング" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RTL記述のコーディング</h2>
+<p><code>Design Sources</code> 内のVerilogファイルをダブルクリックするか、<br>
+右クリックメニューから <code>Open File</code> を選択すると、右側のペインがエディタになる<br>
+このエディタを利用して、RTL記述を書いていく
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-9_main.png" alt="main_2"></p>
+<h3><a class="anchor" aria-hidden="true" id="ソースファイルの保存"></a><a href="#ソースファイルの保存" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ソースファイルの保存</h3>
+<p>ソースファイルを保存するには、以下のどちらかを利用する</p>
+<ul>
+<li>キーボードショートカット: <code>Ctrl + S</code></li>
+<li>メニューバー: <code>File</code> =&gt; <code>Text Editor</code> =&gt; <code>Save File</code>
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-10_save.png" alt="save"></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="デバッグ"></a><a href="#デバッグ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>デバッグ</h3>
+<p><code>Vivado</code> は、ソースファイルを保存するたびに、自動的にソースの構文チェックを行う<br>
+もし、下部の <code>Messages</code> パネルに <code>Error</code> もしくは <code>Critical warning</code> がある場合、<br>
+エラーを修正しないと、これ以降の作業ができないため、必ず修正すること</p>
+<p>(例として、33行目の行末のセミコロンを抜いた時のエラーを紹介する)
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/2_rtl/2-11_error.png" alt="Error"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/koudo2a_fpga_tutorial_wip/docs/project-02"><span class="arrow-prev">← </span><span>プロジェクトを開く</span></a><a class="docs-next button" href="/koudo2a_fpga_tutorial_wip/docs/rtl-02"><span>回路構造の確認</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#プロジェクトにrtl用ソースファイルを追加">プロジェクトにRTL用ソースファイルを追加</a><ul class="toc-headings"><li><a href="#1-ソースを追加">1. ソースを追加</a></li><li><a href="#2-追加するソースファイルの種類の選択">2. 追加するソースファイルの種類の選択</a></li><li><a href="#3-ソースファイルの作成">3. ソースファイルの作成</a></li><li><a href="#4-ファイル名の入力">4. ファイル名の入力</a></li><li><a href="#5-ソースファイルの確認">5. ソースファイルの確認</a></li><li><a href="#6-モジュール設定">6. モジュール設定</a></li><li><a href="#7-完了">7. 完了</a></li></ul></li><li><a href="#rtl記述のコーディング">RTL記述のコーディング</a><ul class="toc-headings"><li><a href="#ソースファイルの保存">ソースファイルの保存</a></li><li><a href="#デバッグ">デバッグ</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 UsamiLab</section></footer></div></body></html>

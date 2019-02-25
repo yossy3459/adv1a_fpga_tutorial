@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>波形操作 · 高度情報演習2A FPGA開発チュートリアル</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;波形操作ウィンドウでは、&lt;code&gt;シミュレータコントローラ&lt;/code&gt;と、&lt;code&gt;波形ウィンドウコントローラ&lt;/code&gt;の2種類のコントローラを用いて、回路の出力結果の表示を操作することができます。&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="波形操作 · 高度情報演習2A FPGA開発チュートリアル"/><meta property="og:type" content="website"/><meta property="og:url" content="https://yossy3459.github.io/koudo2a_fpga_tutorial_wip/index.html"/><meta property="og:description" content="&lt;p&gt;波形操作ウィンドウでは、&lt;code&gt;シミュレータコントローラ&lt;/code&gt;と、&lt;code&gt;波形ウィンドウコントローラ&lt;/code&gt;の2種類のコントローラを用いて、回路の出力結果の表示を操作することができます。&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/koudo2a_fpga_tutorial_wip/img/usamilab.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/koudo2a_fpga_tutorial_wip/css/main.css"/><script src="/koudo2a_fpga_tutorial_wip/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/koudo2a_fpga_tutorial_wip/"><img class="logo" src="/koudo2a_fpga_tutorial_wip/img/usamilab.png" alt="高度情報演習2A FPGA開発チュートリアル"/><h2 class="headerTitleWithLogo">高度情報演習2A FPGA開発チュートリアル</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/koudo2a_fpga_tutorial_wip/docs/intro-01" target="_self">Basic</a></li><li class=""><a href="/koudo2a_fpga_tutorial_wip/docs/adv-01" target="_self">Advanced</a></li><li class=""><a href="/koudo2a_fpga_tutorial_wip/help" target="_self">Help</a></li><li class=""><a href="http://syllabus.sic.shibaura-it.ac.jp/syllabus/2018/ko1/105270.html?y=2018&amp;g=L01" target="_self">Syllabus</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>シミュレーション</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">はじめに<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/intro-01">FPGAでのLSI設計</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/intro-02">Vivadoの開き方</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">プロジェクト管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/project-01">プロジェクトの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/project-02">プロジェクトを開く</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">RTL設計<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/rtl-01">ソースファイルの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/rtl-02">回路構造の確認</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">シミュレーション<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-01">テストフィクスチャの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-02">シミュレーションの実行</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-03">波形操作</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">論理合成・レイアウト<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-01">論理合成・レイアウトの実行</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-02">クロックの設定</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-03">ピンアサイン</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-04">設定の保存と再レイアウト</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">コンフィグレーション<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/conf-01">Basys3の接続と操作</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/conf-02">FPGAへデータ転送</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">波形操作</h1></header><article><div><span><p>波形操作ウィンドウでは、<code>シミュレータコントローラ</code>と、<code>波形ウィンドウコントローラ</code>の2種類のコントローラを用いて、回路の出力結果の表示を操作することができます。<br>
+それぞれ、代表的なボタンについてのみ説明します。
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-15_wave_control.png" alt="wave_1"></p>
+<h2><a class="anchor" aria-hidden="true" id="シミュレータコントローラ"></a><a href="#シミュレータコントローラ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シミュレータコントローラ</h2>
+<table>
+<thead>
+<tr><th style="text-align:center">ボタン</th><th style="text-align:left">説明</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_restart.png" alt="restart"></td><td style="text-align:left">シミュレーションをリセットし、現在の波形を消去する</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_run_all.png" alt="run_all"></td><td style="text-align:left">シミュレーションを実行する<br>(<code>$finish</code>が現れたら、シミュレーションを停止する)</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_run_step.png" alt="run_step"></td><td style="text-align:left">右側のボックスで指定した秒数分だけ、シミュレーションを実行する</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_pause.png" alt="pause"></td><td style="text-align:left">シミュレーションを一時停止する<br>(<code>$finish</code>を書かなかった時などに使用する)</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_relaunch_sim.png" alt="relaunch_sim"></td><td style="text-align:left">ソースを読み込み直して、シミュレーションを実行する<br>RTL記述やテストフィクスチャを修正した時は、このボタンを使うと良い</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="波形ウィンドウコントローラ"></a><a href="#波形ウィンドウコントローラ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>波形ウィンドウコントローラ</h2>
+<table>
+<thead>
+<tr><th style="text-align:center">ボタン</th><th style="text-align:left">説明</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_zoom_in.png" alt="zoom_up"></td><td style="text-align:left">波形の時間軸をを拡大する。より細かい部分の波形が見られるようになる</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_zoom_out.png" alt="zoom_out"></td><td style="text-align:left">波形の時間軸を縮小する。より広い範囲の波形が見られるようになる</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_zoom_fit.png" alt="zoom_fit"></td><td style="text-align:left">生成した波形全体を表示する<br>波形を生成した直後や、位置がわからなくなった際に使用すると良い。</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_go_to_cursol.png" alt="go_to_cursol"></td><td style="text-align:left">画面をカーソルが中央になるようにに移動させる<br>カーソルは黄色の線で表される</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_go_to_start.png" alt="go_to_start"></td><td style="text-align:left">カーソルを波形の先頭 (時間=0) の位置に移動させる</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_go_to_last.png" alt="go_to_last"></td><td style="text-align:left">カーソルを波形の終端の位置に移動させる</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_previous_transition.png" alt="previous_transition"></td><td style="text-align:left">特定の波形を選択している時、<br>カーソルを前の立ち上がりエッジまたは立ち下がりエッジに移動させる</td></tr>
+<tr><td style="text-align:center"><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/button_next_transition.png" alt="next_transition"></td><td style="text-align:left">特定の波形を選択している時、<br>カーソルを次の立ち上がりエッジまたは立ち下がりエッジに移動させる</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="波形部分の16進表記の変更"></a><a href="#波形部分の16進表記の変更" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>波形部分の16進表記の変更</h2>
+<p>波形の <code>Value</code> の表示は、デフォルトで16進表記になっている。<br>
+一方、加算などを実行した際などは、2進数や10進数で表示された方が見やすい。</p>
+<p>変更するには、表示を変えたい波形の <code>Name</code> の部分を右クリックし、<br>
+<code>Radix</code> の中から好きな表示を選べばよい。</p>
+<p><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-16_wave_radix.png" alt="wave-2"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/koudo2a_fpga_tutorial_wip/docs/sim-02"><span class="arrow-prev">← </span><span>シミュレーションの実行</span></a><a class="docs-next button" href="/koudo2a_fpga_tutorial_wip/docs/impl-01"><span>論理合成・レイアウトの実行</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#シミュレータコントローラ">シミュレータコントローラ</a></li><li><a href="#波形ウィンドウコントローラ">波形ウィンドウコントローラ</a></li><li><a href="#波形部分の16進表記の変更">波形部分の16進表記の変更</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 UsamiLab</section></footer></div></body></html>

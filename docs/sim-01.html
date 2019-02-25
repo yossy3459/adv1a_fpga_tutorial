@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>テストフィクスチャの作成 · 高度情報演習2A FPGA開発チュートリアル</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;シミュレーションを行うためには、RTL記述で作成した回路に入力する信号や、波形として観測したい出力信号を定義した、「テストフィクスチャ(テストベンチ)」を作成する必要があります。&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="テストフィクスチャの作成 · 高度情報演習2A FPGA開発チュートリアル"/><meta property="og:type" content="website"/><meta property="og:url" content="https://yossy3459.github.io/koudo2a_fpga_tutorial_wip/index.html"/><meta property="og:description" content="&lt;p&gt;シミュレーションを行うためには、RTL記述で作成した回路に入力する信号や、波形として観測したい出力信号を定義した、「テストフィクスチャ(テストベンチ)」を作成する必要があります。&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/koudo2a_fpga_tutorial_wip/img/usamilab.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/koudo2a_fpga_tutorial_wip/css/main.css"/><script src="/koudo2a_fpga_tutorial_wip/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/koudo2a_fpga_tutorial_wip/"><img class="logo" src="/koudo2a_fpga_tutorial_wip/img/usamilab.png" alt="高度情報演習2A FPGA開発チュートリアル"/><h2 class="headerTitleWithLogo">高度情報演習2A FPGA開発チュートリアル</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/koudo2a_fpga_tutorial_wip/docs/intro-01" target="_self">Basic</a></li><li class=""><a href="/koudo2a_fpga_tutorial_wip/docs/adv-01" target="_self">Advanced</a></li><li class=""><a href="/koudo2a_fpga_tutorial_wip/help" target="_self">Help</a></li><li class=""><a href="http://syllabus.sic.shibaura-it.ac.jp/syllabus/2018/ko1/105270.html?y=2018&amp;g=L01" target="_self">Syllabus</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>シミュレーション</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">はじめに<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/intro-01">FPGAでのLSI設計</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/intro-02">Vivadoの開き方</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">プロジェクト管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/project-01">プロジェクトの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/project-02">プロジェクトを開く</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">RTL設計<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/rtl-01">ソースファイルの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/rtl-02">回路構造の確認</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">シミュレーション<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-01">テストフィクスチャの作成</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-02">シミュレーションの実行</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/sim-03">波形操作</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">論理合成・レイアウト<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-01">論理合成・レイアウトの実行</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-02">クロックの設定</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-03">ピンアサイン</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/impl-04">設定の保存と再レイアウト</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">コンフィグレーション<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/conf-01">Basys3の接続と操作</a></li><li class="navListItem"><a class="navItem" href="/koudo2a_fpga_tutorial_wip/docs/conf-02">FPGAへデータ転送</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">テストフィクスチャの作成</h1></header><article><div><span><p>シミュレーションを行うためには、RTL記述で作成した回路に入力する信号や、波形として観測したい出力信号を定義した、「テストフィクスチャ(テストベンチ)」を作成する必要があります。<br>
+ここでは、テストフィクスチャの作成の仕方を解説します。</p>
+<h2><a class="anchor" aria-hidden="true" id="テスト用ソースファイルの作成"></a><a href="#テスト用ソースファイルの作成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>テスト用ソースファイルの作成</h2>
+<h3><a class="anchor" aria-hidden="true" id="1-ソースを追加"></a><a href="#1-ソースを追加" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. ソースを追加</h3>
+<p><code>Flow Navigator</code> =&gt; <code>PROJECT MANAGER</code> =&gt; <code>Add Source</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-1_rtl_start.png" alt="rtl_start"></p>
+<h3><a class="anchor" aria-hidden="true" id="2-追加するソースファイルの種類の選択"></a><a href="#2-追加するソースファイルの種類の選択" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 追加するソースファイルの種類の選択</h3>
+<p>テストフィクスチャの場合、<code>Add or create simulation sources</code> を選択し、<code>Next</code>
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-2_add_sources.png" alt="add_sources_0"></p>
+<h3><a class="anchor" aria-hidden="true" id="3-テスト用ソースファイルの作成"></a><a href="#3-テスト用ソースファイルの作成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. テスト用ソースファイルの作成</h3>
+<p><code>Create File</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-3_add_sim_source.png" alt="add_sources_1"></p>
+<h3><a class="anchor" aria-hidden="true" id="4-ファイル名の入力"></a><a href="#4-ファイル名の入力" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. ファイル名の入力</h3>
+<ul>
+<li><code>File type</code> は <code>Verilog</code> を指定</li>
+<li><code>File name</code> にソースファイル名を入力 (日本語不可)、ここでは <code>adder_test</code>  <br>
+<strong><code>test</code>などをつけることで、必ずRTL用ソースファイルと異なる名前を設定すること</strong></li>
+<li><code>File location</code> は <code>&lt;Local to Project&gt;</code> を指定</li>
+</ul>
+<p>以上の設定を済ませたら、<code>OK</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-4_sim_name.png" alt="add_sources_2"></p>
+<h3><a class="anchor" aria-hidden="true" id="5-ソースファイルの確認"></a><a href="#5-ソースファイルの確認" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. ソースファイルの確認</h3>
+<p>4で入力したファイル名のVerilogファイルが作成されていることを確認<br>
+確認ができたら、<code>Finish</code> をクリック</p>
+<p><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-5_sim_check.png" alt="add_sources_3"></p>
+<h3><a class="anchor" aria-hidden="true" id="6-モジュール設定"></a><a href="#6-モジュール設定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. モジュール設定</h3>
+<p>モジュールの設定画面が出るが、ここではスキップする<br>
+何もせずに <code>OK</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-6_sim_module.png" alt="define_module_1"></p>
+<p>確認が入るので、<code>Yes</code> をクリック
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-7_sim_module.png" alt="define_module_2"></p>
+<h3><a class="anchor" aria-hidden="true" id="7-完了"></a><a href="#7-完了" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. 完了</h3>
+<p><code>Project Manager</code> の <code>Sources</code> ペイン内の <code>Simlation Sources/sim_1</code> ディレクトリ内に、先ほど指定した名前のVerilogファイル <code>adder_test</code> が作成されていればOK<br>
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-8_main.png" alt="main_1"></p>
+<h2><a class="anchor" aria-hidden="true" id="テストフィクスチャの記述"></a><a href="#テストフィクスチャの記述" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>テストフィクスチャの記述</h2>
+<p><code>Simlation Sources</code> 内のVerilogファイルをダブルクリックするか、<br>
+右クリックメニューから <code>Open File</code> を選択すると、右側のペインがエディタになる<br>
+このエディタを利用して、授業資料を参照しながら、テストフィクスチャを完成させる
+<img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/3-9_main.png" alt="main_2"></p>
+<h3><a class="anchor" aria-hidden="true" id="サンプル"></a><a href="#サンプル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>サンプル</h3>
+<p><img src="/koudo2a_fpga_tutorial_wip/docs/assets/3_sim/sim_sample.png" alt="sim_sample"></p>
+<h3><a class="anchor" aria-hidden="true" id="記述のヒント"></a><a href="#記述のヒント" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>記述のヒント</h3>
+<ul>
+<li><strong>入力は <code>reg</code>、出力は <code>wire</code></strong> で定義する</li>
+<li>確認したい回路とテストフィクスチャの接続は、以下のように記述する
+<pre><code class="hljs css language-Verilog">RTLモジュール名 uut (
+    .入力ポート名(入力ポート名),
+    .出力ポート名(出力ポート名)
+)
+</code></pre></li>
+<li><code>initial</code> 文や、 <code>always</code> 文のブロックの中に、<strong>入力信号の変化</strong>と<strong>信号が変化するタイミング</strong>を記述する。よく使う記号は以下の通り。
+<pre><code class="hljs css language-Verilog">#<span class="hljs-number">10</span>      <span class="hljs-comment">// 10単位時間だけ待つ。timescale 1ns/1ps の時は、単位時間は1ns</span>
+<span class="hljs-built_in">$finish</span>  <span class="hljs-comment">// 波形の生成を止める</span>
+</code></pre></li>
+<li><code>initial</code> 文は主に入力信号の切り替えに、<code>always</code> 文は主にクロックの生成に利用すると良い</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/koudo2a_fpga_tutorial_wip/docs/rtl-02"><span class="arrow-prev">← </span><span>回路構造の確認</span></a><a class="docs-next button" href="/koudo2a_fpga_tutorial_wip/docs/sim-02"><span>シミュレーションの実行</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#テスト用ソースファイルの作成">テスト用ソースファイルの作成</a><ul class="toc-headings"><li><a href="#1-ソースを追加">1. ソースを追加</a></li><li><a href="#2-追加するソースファイルの種類の選択">2. 追加するソースファイルの種類の選択</a></li><li><a href="#3-テスト用ソースファイルの作成">3. テスト用ソースファイルの作成</a></li><li><a href="#4-ファイル名の入力">4. ファイル名の入力</a></li><li><a href="#5-ソースファイルの確認">5. ソースファイルの確認</a></li><li><a href="#6-モジュール設定">6. モジュール設定</a></li><li><a href="#7-完了">7. 完了</a></li></ul></li><li><a href="#テストフィクスチャの記述">テストフィクスチャの記述</a><ul class="toc-headings"><li><a href="#サンプル">サンプル</a></li><li><a href="#記述のヒント">記述のヒント</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 UsamiLab</section></footer></div></body></html>
