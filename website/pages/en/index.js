@@ -51,9 +51,9 @@ class Index extends React.Component {
     const {config: siteConfig, language = ''} = this.props;
     const {baseUrl} = siteConfig;
 
-    const BlockLeft = props => (
+    const BlockCenter_light = props => (
       <Container
-        padding={['left', 'right']}
+        padding={['all']}
         id={props.id}
         background="light">
         <GridBlock
@@ -66,7 +66,7 @@ class Index extends React.Component {
 
     const BlockCenter = props => (
       <Container
-        padding={['bottom', 'top']}
+        padding={['all']}
         id={props.id}
         background={props.background}>
         <GridBlock
@@ -78,7 +78,7 @@ class Index extends React.Component {
     );
 
     const Description = () => (
-      <BlockLeft id="index_desc">
+      <BlockCenter_light id="index_desc">
         {[
           {
             content: 'CADツール(Vivado)を用いたFPGAの設計方法を理解するための補助教材です。\
@@ -89,7 +89,7 @@ class Index extends React.Component {
             title: 'FPGAを用いたLSIチップの設計演習用資料',
           },
         ]}
-      </BlockLeft>
+      </BlockCenter_light>
     );
 
 
