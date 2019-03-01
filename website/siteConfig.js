@@ -21,8 +21,8 @@ const users = [
 ];
 
 const siteConfig = {
-  title: '高度情報演習2A FPGA開発チュートリアル', // Title for your website.
-  tagline: '担当: 宇佐美 公良',
+  title: '高度情報演習1A FPGA開発チュートリアル', // Title for your website.
+  tagline: '芝浦工業大学 工学部 情報工学科 宇佐美 公良',
   url: 'https://yossy3459.github.io', // Your website URL
   baseUrl: '/koudo2a_fpga_tutorial_wip/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -74,7 +74,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} UsamiLab`,
+  copyright: `Copyright © ${new Date().getFullYear()} Usami Lab, Shibaura Institute of Technology`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

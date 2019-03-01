@@ -51,7 +51,33 @@ class Index extends React.Component {
     const {config: siteConfig, language = ''} = this.props;
     const {baseUrl} = siteConfig;
 
-    const BlockCenter_light = props => (
+    const BlockDescription = props => (
+      <Container
+        padding={['all']}
+        id={props.id}
+        background="light">
+        <GridBlock
+          align="left"
+          contents={props.children}
+          layout={props.layout}
+        />
+      </Container>
+    );
+
+    const BlockUsage = props => (
+      <Container
+        padding={['all']}
+        id={props.id}
+        background={props.background}>
+        <GridBlock
+          align="left"
+          contents={props.children}
+          layout={props.layout}
+        />
+      </Container>
+    );
+
+    const BlockButton = props => (
       <Container
         padding={['all']}
         id={props.id}
@@ -64,40 +90,47 @@ class Index extends React.Component {
       </Container>
     );
 
-    const BlockCenter = props => (
-      <Container
-        padding={['all']}
-        id={props.id}
-        background={props.background}>
-        <GridBlock
-          align="center"
-          contents={props.children}
-          layout={props.layout}
-        />
-      </Container>
-    );
-
     const Description = () => (
-      <BlockCenter_light id="index_desc">
+      <BlockDescription id="index_desc">
         {[
           {
-            content: 'CADツール(Vivado)を用いたFPGAの設計方法を理解するための補助教材です。\
-                      この教材を参考に、実際に手を動かしながら、LSIの設計方法を学習していきましょう。\
-                      わからないところがあったら質問するようにしましょう。',
             image: `${baseUrl}img/basys3.png`,
             imageAlign: 'left',
+          },
+          {
             title: 'FPGAを用いたLSIチップの設計演習用資料',
+            content: 'CADツール(Vivado)を用いたFPGAの設計方法を理解するための補助教材です。\
+            この教材を参考に、実際に手を動かしながら、LSIの設計方法を学習していきましょう。\
+            わからないところがあったら質問するようにしましょう。'
           },
         ]}
-      </BlockCenter_light>
+      </BlockDescription>
+
+
     );
 
+    const Usage = () => (
+      <BlockUsage id="index_desc">
+        {[
+          {
+            title: 'この教材の使い方',
+            content: 'ブラウザの横幅を小さくして、開発ツールの隣に置くことで、この資料を見ながら作業することができます。<br> \
+                      Internet Exproler ではレイアウトが崩れるため、Google Chrome か Firefox を利用してください。<br> \
+                      これらのブラウザは、`スタートメニュー` => `すべてのプログラム` => `Internet_Network[ネットワーク]` にあります。',
+          },
+          {
+            image: `${baseUrl}img/window_sample.png`,
+            imageAlign: 'right',
+          }
+        ]}
+      </BlockUsage>
+    );
 
     const Intro = () => (
-      <div
-        className="paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>この教材の使い方</h2>
+      <div class="container lightBackground paddingAll"
+        style={{textAlign: 'center'}}
+        id="index_desc">
+        <h2>コンテンツ</h2>
         <p class="index_intro">
           「Basic」を参照し、授業課題を進めましょう。<br></br>
            基本的に「Basic」を参照すれば、課題に取り組むことができます。<br></br>
@@ -109,7 +142,7 @@ class Index extends React.Component {
 
 
     const Features = () => (
-      <BlockCenter layout="threeColumn">
+      <BlockButton layout="threeColumn">
         {[
           {
             image: `${baseUrl}img/basic.svg`,
@@ -127,7 +160,7 @@ class Index extends React.Component {
             imageLink: 'help'
           },
         ]}
-      </BlockCenter>
+      </BlockButton>
     );
 
 
@@ -136,6 +169,7 @@ class Index extends React.Component {
         <HomeSplash siteConfig={siteConfig} language={language} />
 
           <Description />
+          <Usage />
           <Intro />
           <Features />
 
