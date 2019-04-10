@@ -23,15 +23,15 @@ const users = [
 const siteConfig = {
   title: '高度情報演習1A FPGA開発チュートリアル', // Title for your website.
   tagline: '芝浦工業大学 工学部 情報工学科 宇佐美 公良',
-  url: 'https://yossy3459.github.io', // Your website URL
-  baseUrl: '/koudo2a_fpga_tutorial_wip/', // Base URL for your project */
+  url: 'http://www.usamilab.ise.shibaura-it.ac.jp', // Your website URL
+  baseUrl: '/adv1a-fpga-tutorial/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'koudo2a_fpga_tutorial_wip',
-  organizationName: 'yossy3459',
+  projectName: 'adv1a-fpga-tutorial',
+  organizationName: 'usamilab',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
