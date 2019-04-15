@@ -1,11 +1,11 @@
 ---
 id: rtl-01
-title: ソースファイルの作成
+title: ソースファイルの作成・追加
 ---
-## プロジェクトにRTL用ソースファイルを追加
-例として、`adder` というVerilogファイルを作成する
+## ソースファイルの作成
+例として、`adder` というVerilogファイルをプロジェクト上に作成する
 
-### 1. ソースを追加
+### 1. Add Source の開始
 `Flow Navigator` => `PROJECT MANAGER` => `Add Source` をクリック
 ![rtl_start](assets/2_rtl/2-1_rtl_start.png)
 
@@ -50,24 +50,8 @@ RTL設計の場合、`Add or create design sources` を選択し、`Next` をク
 ![main_1](assets/2_rtl/2-8_main.png)
 
 
-## RTL記述のコーディング
-`Design Sources` 内のVerilogファイルをダブルクリックするか、  
-右クリックメニューから `Open File` を選択すると、右側のペインがエディタになる  
-このエディタを利用して、RTL記述を書いていく
-![main_2](assets/2_rtl/2-9_main.png)
+## ソースファイルの追加
 
-
-### ソースファイルの保存
-ソースファイルを保存するには、以下のどちらかを利用する
-- キーボードショートカット: `Ctrl + S`
-- メニューバー: `File` => `Text Editor` => `Save File`
-![save](assets/2_rtl/2-10_save.png)
-
-
-### デバッグ
-`Vivado` は、ソースファイルを保存するたびに、自動的にソースの構文チェックを行う  
-もし、下部の `Messages` パネルに `Error` もしくは `Critical warning` がある場合、  
-エラーを修正しないと、これ以降の作業ができないため、必ず修正すること  
-
-(例として、33行目の行末のセミコロンを抜いた時のエラーを紹介する)
-![Error](assets/2_rtl/2-11_error.png)
+基本的には作成と同様。  
+手順 3 のみ、`Add Files` を選択し、出てきたウィンドウで追加したいソースファイルを指定する。
+![add_files.PNG](assets/2_rtl/add_files.PNG)

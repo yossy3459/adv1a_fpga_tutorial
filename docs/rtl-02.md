@@ -1,14 +1,26 @@
 ---
 id: rtl-02
-title: 回路構造の確認
+title: コーディング・デバッグ
 ---
-ソースファイルにエラーがない状況で、
-`RTL ANALYSIS` => `Open Elaborated Design` を選択すると、
-回路構造を確認することができる
-![Open Erabolated Design](assets/2_rtl/2-12_rtl_analysis.png)
 
-この画面が出た場合、`OK` をクリック
-![Open Erabolated Design](assets/2_rtl/2-13_rtl_analysis.png)
+## RTL記述のコーディング
+`Design Sources` 内のVerilogファイルをダブルクリックするか、  
+右クリックメニューから `Open File` を選択すると、右側のペインがエディタになる  
+このエディタを利用して、RTL記述を書いていく
+![main_2](assets/2_rtl/2-9_main.png)
 
-右側のペインに、ソースファイルを元にした回路図(Schematic)が表示される。
-![Open Erabolated Design](assets/2_rtl/2-14_rtl_analysis.png)
+
+### ソースファイルの保存
+ソースファイルを保存するには、以下のどちらかを利用する
+- キーボードショートカット: `Ctrl + S`
+- メニューバー: `File` => `Text Editor` => `Save File`
+![save](assets/2_rtl/2-10_save.png)
+
+
+### デバッグ
+`Vivado` は、ソースファイルを保存するたびに、自動的にソースの構文チェックを行う  
+もし、下部の `Messages` パネルに `Error` もしくは `Critical warning` がある場合、  
+エラーを修正しないと、これ以降の作業ができないため、必ず修正すること  
+
+(例として、33行目の行末のセミコロンを抜いた時のエラーを紹介する)
+![Error](assets/2_rtl/2-11_error.png)

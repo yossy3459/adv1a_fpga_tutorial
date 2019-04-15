@@ -19,9 +19,9 @@ title: プロジェクトの作成
 ### 3. プロジェクト名の設定
 
 - `Project name` は先頭にアルファベットが来るような名前にすること
-- `Project Location` は、ローカルディスクではなくマイドライブを指定すること  
-さらに、マイドライブ上に `Vivado` というディレクトリを作成すること  
-以下の図ではマイドライブが `Z` なので、 `Z:/Vivado` を指定している
+- `Project Location` は、ローカルディスクではなくMyVolumeを指定すること  
+さらに、MyVolume上に `Vivado` というディレクトリを作成すること  
+以下の図ではMyVolumeが `Z` なので、 `Z:/Vivado` を指定している
 - `Create project subdirectory` にチェックを入れる
 - 入力が終わったら、`Next` をクリック
 
