@@ -5,8 +5,8 @@ title: ソースファイルの作成・追加
 ## ソースファイルの作成
 例として、`adder` というVerilogファイルをプロジェクト上に作成する
 
-### 1. Add Source の開始
-`Flow Navigator` => `PROJECT MANAGER` => `Add Source` をクリック
+### 1. Add Sourcesの開始
+`Flow Navigator` => `PROJECT MANAGER` => `Add Sources` をクリック
 ![rtl_start](assets/2_rtl/2-1_rtl_start.png)
 
 

@@ -7,8 +7,8 @@ title: テストフィクスチャの作成
 
 ## テスト用ソースファイルの作成
 
-### 1. ソースを追加
-`Flow Navigator` => `PROJECT MANAGER` => `Add Source` をクリック
+### 1. Add Sourcesの開始
+`Flow Navigator` => `PROJECT MANAGER` => `Add Sources` をクリック
 ![rtl_start](assets/3_sim/3-1_rtl_start.png)
 
 
