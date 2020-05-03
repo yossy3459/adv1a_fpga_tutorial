@@ -24,8 +24,9 @@ title: FPGAへデータ転送
 `Vivado` がPCに接続されたボードを自動的に検出し、接続まで行ってくれる
 ![open_target](assets/5_conf/5-4_open_target.png)
 
-もし `Windows Defender` の画面が表示された場合、`アクセスを許可する` をクリック
-![firewall](assets/5_conf/5-5_firewall.png)
+**もし `Windows セキュリティ` の画面が表示された場合、基本(自前の)は `アクセスを許可する` をクリック**
+**ただし、芝浦工大の学情PC(Win10)では、`キャンセル` をクリック。(キャンセルしてもFPGAへの接続は可能であることを確認済みです)**
+<!-- ![firewall](assets/5_conf/5-5_firewall.png) -->
 
 無事接続できれば、以下の画面に変化する  
 `Program Device` をクリック
