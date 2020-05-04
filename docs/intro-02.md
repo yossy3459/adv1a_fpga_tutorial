@@ -3,7 +3,7 @@ id: intro-02
 title: Vivadoの開き方
 ---
 
-<div class="alert alert-warning">
+<div class="alert alert-danger">
 <strong>スクリーンショットは <code>Vivado 2018.3</code> で説明しています。</strong><br>
 学情PCにインストールされている <code>Vivado 2019.2</code> において特段操作に変更はありませんが、もし不明点があればTAに質問してください。
 </div>
