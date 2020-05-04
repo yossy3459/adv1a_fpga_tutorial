@@ -71,6 +71,10 @@ article table img {
     margin-bottom: 0px;
 }
 
+.no_margin{
+  margin: 0 !important;
+}
+
 article td {
     vertical-align: middle;
 }
