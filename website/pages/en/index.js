@@ -55,7 +55,7 @@ class Index extends React.Component {
       <Container
         padding={['all']}
         id={props.id}
-        background="light">
+        background={props.background}>
         <GridBlock
           align="left"
           contents={props.children}
@@ -68,7 +68,7 @@ class Index extends React.Component {
       <Container
         padding={['all']}
         id={props.id}
-        background={props.background}>
+        background="light">
         <GridBlock
           align="left"
           contents={props.children}
@@ -81,7 +81,7 @@ class Index extends React.Component {
       <Container
         padding={['all']}
         id={props.id}
-        background="light">
+        background={props.background}>
         <GridBlock
           align="center"
           contents={props.children}
@@ -90,8 +90,35 @@ class Index extends React.Component {
       </Container>
     );
 
+
+    const Information = () => (
+      <div class="container lightBackground paddingAll"
+        style={{textAlign: 'center'}}
+        >
+        <h2 className="mitigate-h2-margin">更新情報</h2>
+        <div className="top-info-table">
+          <table >
+            <tbody>
+              <tr>
+                <td>2020/05/13</td>
+                <td>Basic内にリモート授業に向けた注意点を記載しました。Basic, Advancedを加筆しました</td>
+              </tr>
+              <tr>
+                <td>2019/05/08</td>
+                <td>Basic - 最終課題の注意点 を公開しました</td>
+              </tr>
+              <tr>
+                <td>2019/04/10</td>
+                <td>Webサイトオープン</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+
     const Description = () => (
-      <BlockDescription id="index_desc">
+      <BlockDescription>
         {[
           {
             image: `${baseUrl}img/basys3.png`,
@@ -105,12 +132,10 @@ class Index extends React.Component {
           },
         ]}
       </BlockDescription>
-
-
     );
 
     const Usage = () => (
-      <BlockUsage id="index_desc">
+      <BlockUsage>
         {[
           {
             title: 'この教材の使い方',
@@ -127,15 +152,15 @@ class Index extends React.Component {
     );
 
     const Intro = () => (
-      <div class="container lightBackground paddingAll"
+      <div class="container paddingAll"
         style={{textAlign: 'center'}}
-        id="index_desc">
-        <h2>コンテンツ</h2>
-        <p class="index_intro">
+        >
+        <h2 class="mitigate-h2-margin">コンテンツ</h2>
+        <p>
           「Basic」を参照し、授業課題を進めましょう。<br></br>
            基本的に「Basic」を参照すれば、課題に取り組むことができます。<br></br>
           「Advanced」では、よりツールを簡単に使う方法や、より踏み込んだ内容などを解説しています。<br></br>
-          「Help」では、リファレンスなどを紹介しています。<br></br>
+          「Links」では、リファレンスやシラバスなどを紹介しています。<br></br>
         </p>
       </div>
     );
@@ -157,7 +182,7 @@ class Index extends React.Component {
           {
             image: `${baseUrl}img/help.svg`,
             imageAlign: 'top',
-            imageLink: 'help'
+            imageLink: 'links'
           },
         ]}
       </BlockButton>
@@ -168,6 +193,7 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
 
+          <Information />
           <Description />
           <Usage />
           <Intro />

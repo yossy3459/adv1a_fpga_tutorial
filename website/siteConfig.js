@@ -40,8 +40,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'intro-01', label: 'Basic'},
     {doc: 'adv-01', label: 'Advanced'},
-    {page: 'help', label: 'Help'},
-    {href: "http://syllabus.sic.shibaura-it.ac.jp/syllabus/2018/ko1/105270.html?y=2018&g=L01", label: "Syllabus" },
+    {page: 'links', label: 'Links'},
   ],
 
   // If you have users set above, you add it here:
