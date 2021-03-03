@@ -2,6 +2,9 @@
 id: conf-remote
 title: 設計データの生成と保存
 ---
+<div class="alert alert-danger">
+<strong>こちらではリモート演習の場合のコンフィグレーション手順を示しています。オフライン演習の場合は、<a href="/adv1a-fpga-tutorial/docs/conf-01">こちら</a>へ進んでください。 </strong><br>
+</div>
 
 続いて、`Vivado` 上でコンフィグレーションを行い、FPGAに転送するためのデータを作成します。
 

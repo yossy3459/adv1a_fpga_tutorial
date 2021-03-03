@@ -3,7 +3,7 @@ id: intro-01
 title: FPGAでのLSI設計
 ---
 <div class="alert alert-danger">
-<strong>リモート演習の場合、必ずはじめに <a href="remote">リモート演習の注意点</a> を読んでから作業に入ってください！ </strong><br>
+<strong>リモート演習の場合、必ずはじめに <a href="/adv1a-fpga-tutorial/docs/remote">リモート演習の注意点</a> を読んでから作業に入ってください！ </strong><br>
 </div>
 
 ## 開発手順

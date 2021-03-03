@@ -6,8 +6,8 @@
     "RTL設計": ["rtl-01", "rtl-02", "rtl-03"],
     "シミュレーション": ["sim-01", "sim-02","sim-03"],
     "論理合成・レイアウト": ["impl-01", "impl-02", "impl-03", "impl-04"],
-    "コンフィグレーション": ["conf-01", "conf-02"],
     "コンフィグレーション(リモート演習)": ["conf-remote"],
+    "コンフィグレーション": ["conf-01", "conf-02"],
     "最終課題の注意点": ["final_assignment"]
   },
   "docs-other": {"Advanced": ["adv-01", "adv-02", "adv-03"]}
